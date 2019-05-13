@@ -1,22 +1,21 @@
-from PyQt5 import QtCore, QtGui, QtWidgets
-from designfiles import homeView
 import sys
 import csv
-
+from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QTreeWidget, QTreeWidgetItem, QWidget
+from designfiles import homeView
+
 
 class MainDialog(QtWidgets.QMainWindow, homeView.Ui_MainWindow):
 
-    ### Variables ###
+    # Variables
 
-    ### Setup ###
+    # Setup 
     def __init__(self, parent=None):
 
         super(MainDialog, self).__init__(parent)
         self.setupUi(self)
         self.setupClauses()
         self.treeWidget.clicked.connect(self.selectClause)
-
 
     def listClauses(self):
         gdpr_list = []
@@ -26,12 +25,9 @@ class MainDialog(QtWidgets.QMainWindow, homeView.Ui_MainWindow):
                 gdpr_list.append(i)
         return(gdpr_list)
 
-
     def printFullText(self):
-        self.gdprBrowser.setHtml("<p>Full GDPR mofuckckkakaaaa</p>")
+        self.gdprBrowser.setHtml("Test string")
 
-
-    
     def selectClause(self):
         gdpr_text = self.listClauses()
         search_text = self.treeWidget.currentItem().text(0)
@@ -60,10 +56,9 @@ class MainDialog(QtWidgets.QMainWindow, homeView.Ui_MainWindow):
             else:
                 for i in gdpr_text:
                     if search_text == i[6]:
-                       self. gdprBrowser.append(i[0].rstrip())
-        self.gdprBrowser.verticalScrollBar().setValue(0)
-            
-            
+                        self. gdprBrowser.append(i[0].rstrip())
+        self.gdprBrowser.verticalScrollBar().setValue(0)        
+
     def setupClauses(self):
         '''Loads in the GDPR tree widget contents'''
         # Load the gdpr in to a list
@@ -92,17 +87,17 @@ class MainDialog(QtWidgets.QMainWindow, homeView.Ui_MainWindow):
             in_use = []
             for i in gdpr_list:
                 if i[5].strip() == chapter_str.strip():
-                     leveltwotext = i[2]
-                     leveltwostr = "{}.{}".format(i[2], i[3])
-                     if leveltwotext not in in_use:
-                         newchild = QTreeWidgetItem([leveltwostr])
-                         level.addChild(newchild)
-                         in_use.append(leveltwotext)
-                         for i in gdpr_list:
-                             if i[2].strip() == leveltwotext:
-                                 levelthreetext = "{}".format(i[6])
-                                 thirdchild = QTreeWidgetItem([levelthreetext])
-                                 newchild.addChild(thirdchild)
+                    leveltwotext = i[2]
+                    leveltwostr = "{}.{}".format(i[2], i[3])
+                    if leveltwotext not in in_use:
+                        newchild = QTreeWidgetItem([leveltwostr])
+                        level.addChild(newchild)
+                        in_use.append(leveltwotext)
+                        for i in gdpr_list:
+                            if i[2].strip() == leveltwotext:
+                                levelthreetext = "{}".format(i[6])
+                                thirdchild = QTreeWidgetItem([levelthreetext])
+                                newchild.addChild(thirdchild)
                     
             self.treeWidget.addTopLevelItem(level)
 
