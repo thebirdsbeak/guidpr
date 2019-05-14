@@ -61,75 +61,78 @@
           <property name="currentIndex">
            <number>0</number>
           </property>
+          <widget class="QWidget" name="notesTab">
+           <attribute name="title">
+            <string>Notes</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_5">
+            <item row="2" column="0">
+             <widget class="QPushButton" name="anoteButton">
+              <property name="text">
+               <string>Add</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QPushButton" name="rnoteButton">
+              <property name="text">
+               <string>Remove</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QPlainTextEdit" name="notePad"/>
+            </item>
+            <item row="0" column="0">
+             <widget class="QTextBrowser" name="noteBrowser"/>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="linksTab">
+           <attribute name="title">
+            <string>Linked</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_3">
+            <item row="0" column="0">
+             <widget class="QTextBrowser" name="linkBrowser"/>
+            </item>
+            <item row="1" column="0">
+             <widget class="QPushButton" name="alinkButton">
+              <property name="text">
+               <string>Add</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QPushButton" name="rlinkButton">
+              <property name="text">
+               <string>Remove</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
           <widget class="QWidget" name="favesTab">
            <attribute name="title">
             <string>Favourites</string>
            </attribute>
-           <layout class="QGridLayout" name="gridLayout_5">
-            <item row="1" column="0">
-             <widget class="QPushButton" name="pushButton_5">
-              <property name="text">
-               <string>Add Favourite</string>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="0">
-             <widget class="QListView" name="listView"/>
-            </item>
-            <item row="2" column="0">
-             <widget class="QPushButton" name="pushButton_6">
-              <property name="text">
-               <string>Remove Favourite</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-          <widget class="QWidget" name="noteTab">
-           <attribute name="title">
-            <string>Notes</string>
-           </attribute>
-           <layout class="QGridLayout" name="gridLayout_3">
-            <item row="0" column="0">
-             <widget class="QTextBrowser" name="notesBrowser"/>
-            </item>
-            <item row="1" column="0">
-             <widget class="QPushButton" name="pushButton">
-              <property name="text">
-               <string>Add Note</string>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="0">
-             <widget class="QPushButton" name="pushButton_2">
-              <property name="text">
-               <string>Remove Note</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-          <widget class="QWidget" name="linkedTab">
-           <attribute name="title">
-            <string>Linked</string>
-           </attribute>
            <layout class="QGridLayout" name="gridLayout_4">
-            <item row="1" column="0">
-             <widget class="QPushButton" name="pushButton_3">
+            <item row="2" column="0">
+             <widget class="QPushButton" name="rfaveButton">
               <property name="text">
-               <string>Add Link</string>
+               <string>Remove</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QPushButton" name="afaveButton">
+              <property name="text">
+               <string>Add</string>
               </property>
              </widget>
             </item>
             <item row="0" column="0">
-             <widget class="QListWidget" name="listWidget"/>
-            </item>
-            <item row="2" column="0">
-             <widget class="QPushButton" name="pushButton_4">
-              <property name="text">
-               <string>Remove Link</string>
-              </property>
-             </widget>
+             <widget class="QTextBrowser" name="faveBrowser"/>
             </item>
            </layout>
           </widget>
